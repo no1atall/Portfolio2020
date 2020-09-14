@@ -99,7 +99,7 @@ const Contact = ({ title }) => {
             placeholder="Subject"
             value={subject}
             required
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={(e) => setSubject(e.target.value)}
           />
           <Label htmlFor="message">Enter A Message</Label>
           <TextArea
@@ -109,7 +109,7 @@ const Contact = ({ title }) => {
             placeholder="Message"
             value={message}
             required
-            onChange={(e) => setSubject(e.target.value)}
+            onChange={(e) => setMessage(e.target.value)}
           />
           <Button type="submit" value="send" disabled={disabled}>
             Send
