@@ -34,6 +34,8 @@ const Button = styled.button`
   ${tw` h-8 w-24 md:w-32 bg-blue-700 hover:bg-blue-500 border-gray-600 hover:border-700 text-white font-bold`}
 `;
 
+
+
 const Contact = ({ title }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -54,7 +56,7 @@ const Contact = ({ title }) => {
         "gmail",
         "template_ykr6vvc",
         e.target,
-        "process.env.REACT_APP_EMAILJS_API_KEY"
+        KEY
       )
       .then(
         (result) => {
