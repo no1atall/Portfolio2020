@@ -44,6 +44,8 @@ const Contact = ({ title }) => {
   const [subject, setSubject] = useState("");
   const [disabled, setDisabled] = useState(false);
 
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name, email, message);
@@ -62,9 +64,11 @@ const Contact = ({ title }) => {
       .then(
         (result) => {
           console.log(result.text);
+          alert("Your Email has been sent. I will get back to you shortly.")
         },
         (error) => {
           console.log(error.text);
+          alert("Your Email failed to send. Please Check your infomation and try again.")
         }
       );
   };
@@ -117,6 +121,8 @@ const Contact = ({ title }) => {
           <Button type="submit" value="send" disabled={disabled}>
             Send
           </Button>
+          
+          
         </Form>
       </FormWrapper>
     </Wrapper>
