@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com"
+import emailjs from "emailjs-com";
 import styled from "styled-components";
 import tw from "tailwind.macro";
 
@@ -34,8 +34,6 @@ const Button = styled.button`
   ${tw` h-8 w-24 md:w-32 bg-blue-700 hover:bg-blue-500 border-gray-600 hover:border-700 text-white font-bold`}
 `;
 
-
-
 const Contact = ({ title }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -43,8 +41,6 @@ const Contact = ({ title }) => {
   const [subject, setSubject] = useState("");
   const [disabled, setDisabled] = useState(false);
 
-  
-  
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name, email, message);
@@ -53,14 +49,21 @@ const Contact = ({ title }) => {
       disabled: true,
     });
 
-    emailjs.sendForm('gmail', 'template_ykr6vvc', e.target, 'process.env.REACT_APP_EMAILJS_API_KEY')
-      .then((result) => {
+    emailjs
+      .sendForm(
+        "gmail",
+        "template_ykr6vvc",
+        e.target,
+        "process.env.REACT_APP_EMAILJS_API_KEY"
+      )
+      .then(
+        (result) => {
           console.log(result.text);
-      }, (error) => {
+        },
+        (error) => {
           console.log(error.text);
-      });
-
-    
+        }
+      );
   };
 
   return (
@@ -70,6 +73,7 @@ const Contact = ({ title }) => {
         <Form onSubmit={handleSubmit}>
           <Label htmlFor="name">Your Name</Label>
           <Input
+            name="name"
             id="name"
             type="text"
             placeholder="Name"
@@ -79,6 +83,7 @@ const Contact = ({ title }) => {
           />
           <Label htmlFor="email">Your Email</Label>
           <Input
+            name="email"
             id="email"
             type="email"
             placeholder="Email"
@@ -88,6 +93,7 @@ const Contact = ({ title }) => {
           />
           <Label htmlFor="subject">Subject</Label>
           <Input
+            name="subject"
             id="subject"
             type="text"
             placeholder="Subject"
@@ -97,6 +103,7 @@ const Contact = ({ title }) => {
           />
           <Label htmlFor="message">Enter A Message</Label>
           <TextArea
+            name="message"
             id="message"
             type="text"
             placeholder="Message"
@@ -107,9 +114,6 @@ const Contact = ({ title }) => {
           <Button type="submit" value="send" disabled={disabled}>
             Send
           </Button>
-          
-
-          
         </Form>
       </FormWrapper>
     </Wrapper>
