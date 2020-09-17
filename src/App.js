@@ -1,8 +1,11 @@
 // App.js
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 
 import Navbar from "./components/Nav/Navbar";
+
+
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -48,41 +51,46 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <Navbar />
-
-        <Route
-          path="/"
-          exact
-          render={() => (
-            <Home
-              title={this.state.home.title}
-              subTitle={this.state.home.subTitle}
-              text={this.state.home.text}
+        <div>
+          <Navbar />
+          <Switch>
+            <Route
+              path="/"
+              exact
+              render={() => (
+                <Home
+                  title={this.state.home.title}
+                  subTitle={this.state.home.subTitle}
+                  text={this.state.home.text}
+                />
+              )}
             />
-          )}
-        />
-        <Route
-          path="/about"
-          render={() => (
-            <About
-              title={this.state.about.title}
-              subTitle1={this.state.about.subTitle1}
-              subTitle2={this.state.about.subTitle2}
-              subTitle3={this.state.about.subTitle3}
-              subTitle4={this.state.about.subTitle4}
-              text1={this.state.about.text1}
-              text2={this.state.about.text2}
-              text3={this.state.about.text3}
-              text4={this.state.about.text4}
+            <Route
+              path="/about"
+              render={() => (
+                <About
+                  title={this.state.about.title}
+                  subTitle1={this.state.about.subTitle1}
+                  subTitle2={this.state.about.subTitle2}
+                  subTitle3={this.state.about.subTitle3}
+                  subTitle4={this.state.about.subTitle4}
+                  text1={this.state.about.text1}
+                  text2={this.state.about.text2}
+                  text3={this.state.about.text3}
+                  text4={this.state.about.text4}
+                />
+              )}
             />
-          )}
-        />
-        <Route
-          path="/contact"
-          render={() => <Contact title={this.state.contact.title} />}
-        />
-
-        <Footer />
+            <Route
+              path="/contact"
+              render={() => <Contact title={this.state.contact.title} />}
+            />
+            <Route render={() => <h2>This Page Does Not Exist</h2>} />
+          
+          
+          </Switch>
+          <Footer />
+        </div>
       </Router>
     );
   }
