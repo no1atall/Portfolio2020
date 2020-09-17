@@ -2,9 +2,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-
 import Navbar from "./components/Nav/Navbar";
-
 
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -86,8 +84,6 @@ class App extends React.Component {
               render={() => <Contact title={this.state.contact.title} />}
             />
             <Route render={() => <h2>This Page Does Not Exist</h2>} />
-          
-          
           </Switch>
           <Footer />
         </div>

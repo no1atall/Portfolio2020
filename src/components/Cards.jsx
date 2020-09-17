@@ -9,7 +9,7 @@ import Paladin from "../Imgs/paladin.png";
 import Guessing from "../Imgs/Guessing-Game.png";
 import Loan from "../Imgs/Loan-Calculator.png";
 import Task from "../Imgs/Task-List.png";
-import Reading from "../Imgs/Reading-List.png"
+import Reading from "../Imgs/Reading-List.png";
 
 const Container = tw.div`mt-12`;
 const HeadingContainer = tw.div` mb-12 md:mb-24`;
@@ -85,7 +85,8 @@ export default ({
     {
       imageSrc: Reading,
       name: "Reading List",
-      text: "This is a responsive Reading List. It uses local storage to keep tracks of books for you. It is built using Html, JavaScript, and CSS. Skeleon CSS is used as the CSS framework. Github and Netlify links below.",
+      text:
+        "This is a responsive Reading List. It uses local storage to keep tracks of books for you. It is built using Html, JavaScript, and CSS. Skeleon CSS is used as the CSS framework. Github and Netlify links below.",
       links: [
         {
           url: "https://github.com/no1atall/Book-List",
@@ -94,13 +95,14 @@ export default ({
         {
           url: "https://small-reading-list.netlify.app/",
           icon: Netlify,
-        }
-      ]
+        },
+      ],
     },
     {
       imageSrc: Loan,
       name: "Loan Caculator",
-      text: "This is a responsive loan calculator that calculates monthly payments, total interest, and total amount due. It is built with Html, JavaScript, and CSS. Bootstrap is used as the CSS framework. Github and Netlify links below.",
+      text:
+        "This is a responsive loan calculator that calculates monthly payments, total interest, and total amount due. It is built with Html, JavaScript, and CSS. Bootstrap is used as the CSS framework. Github and Netlify links below.",
       links: [
         {
           url: "https://github.com/no1atall/LoanCalculator",
@@ -115,7 +117,8 @@ export default ({
     {
       imageSrc: Task,
       name: " Personal Task List",
-      text: "This is a responsive Task List utilizing local storage. It is built with Html, JavaScript and CSS. The CSS framework used for this project is Google's Material UI. Github and Netflify links below.",
+      text:
+        "This is a responsive Task List utilizing local storage. It is built with Html, JavaScript and CSS. The CSS framework used for this project is Google's Material UI. Github and Netflify links below.",
       links: [
         {
           url: "https://github.com/no1atall/Task-List",
@@ -141,12 +144,18 @@ export default ({
             <CardImage imageSrc={card.imageSrc} />
             <CardContent>
               <span className="name">{card.name}</span>
-            
-                <p className="text">{card.text}</p>
-            
+
+              <p className="text">{card.text}</p>
+
               <CardLinks>
                 {card.links.map((link, linkIndex) => (
-                  <a key={linkIndex} className="link" target="_blank" rel="noopener noreferrer" href={link.url}>
+                  <a
+                    key={linkIndex}
+                    className="link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={link.url}
+                  >
                     <link.icon className="icon" />
                   </a>
                 ))}

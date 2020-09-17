@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import tw from "tailwind.macro";
 
-
-
 const AboutContentWrapper = styled.div`
   ${tw` flex justify-center flex-col mx-auto -mt-64 px-4 max-w-screen-sm mb-24`}
 `;
@@ -13,11 +11,11 @@ const Spacer = styled.div`
 `;
 
 const SubTitle = styled.h3`
-${tw`mb-2`}
+  ${tw`mb-2`}
 `;
 
 const Text = styled.p`
-${tw`text-gray-600 mb-4`}
+  ${tw`text-gray-600 mb-4`}
 `;
 
 function Content(props) {
