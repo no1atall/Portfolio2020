@@ -5,6 +5,7 @@ import { css } from "styled-components/macro";
 
 import { ReactComponent as Github } from "../Imgs/logo-github.svg";
 import { ReactComponent as Netlify } from "../Imgs/netlify.svg";
+import Form from "../Imgs/Contact-Form.png";
 import Paladin from "../Imgs/paladin.png";
 import Guessing from "../Imgs/Guessing-Game.png";
 import Loan from "../Imgs/Loan-Calculator.png";
@@ -49,6 +50,24 @@ export default ({
   heading = "My Latest Projects",
   description = "Below is a sampling of some of my lastest projects. Contact me if you want to know what else I'm working on!",
   cards = [
+    {
+      imageSrc: Form,
+      name: "Material UI Contact Form",
+      text:
+        "This is a responsive form which authenticates data and sends an email. It is built using Material UI for styling, React, JavaScript, nodejs, react-hook-form for gathering input data, Yup for authentication, and email-js for email sending.",
+
+      links: [
+        {
+          url: "https://github.com/no1atall/Form",
+          icon: Github,
+        },
+        {
+          url: "https://ians-portfolio.netlify.app/",
+          icon: Netlify,
+        },
+      ],
+    },
+
     {
       imageSrc: Paladin,
       name: "Paladin Demo Home Page",
