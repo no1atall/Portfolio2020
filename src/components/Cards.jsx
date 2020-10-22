@@ -62,7 +62,7 @@ export default ({
           icon: Github,
         },
         {
-          url: "https://ians-portfolio.netlify.app/",
+          url: "https://materialui-contact-form.netlify.app",
           icon: Netlify,
         },
       ],
